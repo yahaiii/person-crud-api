@@ -102,3 +102,92 @@ To use the API, run the Flask application and make requests to the specified end
 
 ## API Endpoints
 The API provides the following endpoints:
+
+### Create a New Person
+* URL: /api/person
+* Method: POST
+* Description: Add a new person.
+* Request:
+JSON body with person details.
+* Response:
+JSON response indicating success or failure.
+
+### Retrieve Person Details by ID
+* URL: /api/person/<int:person_id>
+* Method: GET
+* Description: Fetch details of a person by ID.
+* Response:
+    JSON response with person details or error message.
+
+### Update Person Details by ID
+* URL: /api/person/<int:person_id>
+* Method: PUT
+* Description: Modify details of an existing person by ID.
+* Request:
+    JSON body with updated person details.
+* Response:
+    JSON response indicating success or failure.
+
+### Remove a Person by ID
+* URL: /api/person/<int:person_id>
+* Method: DELETE
+* Description: Remove a person by ID.
+* Response:
+    JSON response indicating success or failure.
+
+
+## Dynamic Parameter Handling
+
+The API is flexible enough to handle dynamic input. You can use a person's
+name in place of `<int:person_id>` for any of the above endpoints. For example:
+
+- `/api/person/JohnDoe` will operate on the person with the name "JohnDoe."
+
+## Testing
+
+You can run automated tests using pytest or manually test the API with Postman.
+
+### Automated Tests
+
+To run automated tests, use the following command:
+
+```bash
+pytest
+```
+
+## Manual Testing
+You can manually test the API using Postman or any other API testing tool. Import the provided Postman collection for easy testing.
+
+## Database Model
+The project uses SQLAlchemy to define the following database models:
+
+`Person`: Represents a person with attributes like name, age, and email.
+
+## Database
+
+### Table: persons
+
+This table will store information about individuals ("persons").
+
+| Column Name      | Data Type | Description     |
+| :---        |    :----:   |          ---: |
+| person_id      | INT       | Unique identifier   |
+| name   | VARCHAR        | Name of the person      |
+| age      | INT       | Age of the person   |
+| email   | VARCHAR        | Email address      |
+	
+		
+* `person_id` will be the primary key to ensure each person has a unique identifier.
+
+* `name` will store the name of the person as a string.
+* `age` will store the age of the person as an integer.
+* `email` will store the email address of the person as a string.
+
+## Deployment
+For deployment instructions, refer to the project's documentation in the docs/ directory.
+
+## License
+This project is licensed under the MIT License.
+
+## Acknowledgments
+I thank HNG for graciously granting this task.
