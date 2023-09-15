@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from sqlalchemy import create_engine, MetaData, Table, select, insert, update, delete
+from sqlalchemy import create_engine, MetaData, select, insert, update, delete
 # import os
 
 app = Flask(__name__)
@@ -9,7 +9,7 @@ app = Flask(__name__)
 # db_password = os.environ.get('DATABASE_PASSWORD')
 
 # Create the DTABASE_URL
-db_url = f'mysql+mysqlconnector://yahai:7password7@yahai.mysql.pythonanywhere-services.com/yahai$persons'
+db_url = 'mysql+mysqlconnector://yahai:7password7@yahai.mysql.pythonanywhere-services.com/yahai$persons'
 
 # Create a SQLAlchemy engine (you can change the database URL as needed)
 engine = create_engine(db_url)
