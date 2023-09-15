@@ -32,7 +32,6 @@ def create_person():
         with engine.connect() as connection:
             query = insert(persons_table).values(**data)
             connection.execute(query)
-            connection.commit()  # Explicitly commit the transaction
 
         return jsonify({"message": "Person created successfully"}), 201
     except Exception as e:
