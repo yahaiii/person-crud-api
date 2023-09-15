@@ -1,62 +1,21 @@
-# Simple Person API
-
-This project is a simple REST API that allows you to perform CRUD (Create, Read, Update, Delete) operations on a "person" resource. You can add, retrieve, modify, and remove person records using the API. The project uses Flask, SQLAlchemy, and MySQL for database interactions.
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Project Structure](#project-structure)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Testing](#testing)
-- [Database Models](#database-models)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+# Simple Person REST API
 
 ## Introduction
 
-This project aims to provide a simple RESTful API for managing "person" records in a database. It supports basic CRUD operations and allows dynamic parameter handling for operations based on a person's name. The project also includes UML diagrams to represent the system's design and database structure.
-
-## Features
-
-- Create a new person record.
-- Retrieve details of a person by ID.
-- Update details of an existing person by ID.
-- Remove a person by ID.
-- Dynamic parameter handling based on a person's name.
-- Secure database interactions to prevent common vulnerabilities.
-
-## Technologies Used
-
-- **Flask:** A micro web framework for Python.
-- **SQLAlchemy:** An Object-Relational Mapping (ORM) library for Python.
-- **MySQL:** A popular relational database management system.
-- **Flask-RESTful:** An extension for Flask to simplify API development.
-- **Flask-CORS:** An extension for handling Cross-Origin Resource Sharing.
-- **Marshmallow:** A library for object serialization/deserialization.
-- **Flask-Marshmallow:** An extension for integrating Marshmallow with Flask.
-- **pytest:** A testing framework for Python.
-- **Postman:** A tool for testing APIs manually.
-- **Git:** Version control system.
+This is a simple REST API project for managing a "person" resource. The API provides endpoints for Create, Read, Update, and Delete (CRUD) operations on person records in a database.
 
 ## Getting Started
 
-Follow these steps to set up and run the project on your local machine.
+Follow these instructions to set up and run the API locally on your machine.
 
 ### Prerequisites
 
-Before you begin, ensure you have the following prerequisites:
+Before you begin, ensure you have met the following requirements:
 
-- Python 3.x
-- MySQL server
-- Virtual environment (recommended)
+- Python 3.x installed on your machine
+- pip package manager installed
+- A MySQL database server (or another database of your choice) installed and running
+- Knowledge of your database credentials (username, password, database name)
 
 ### Installation
 
@@ -90,12 +49,18 @@ Before you begin, ensure you have the following prerequisites:
 The project directory structure is organized as follows:
 
 * `app.py`: The main Flask application.
-* `models.py`: Contains the database models defined using SQLAlchemy.
-* `schemas.py`: Defines Marshmallow schemas for data validation and serialization.
-* `config.py`: Configuration settings for the application.
-* `tests/`: Directory for test scripts and fixtures.
-* `docs/`: Directory for documentation and UML diagrams.
+* `schema.sql`: The database schema.
+* `README.md`: Explaisn how to setup the project and all.
+* `DOCUMENTATION.md`: Explains the API functionality.
+* `uml.png`: Graphical overview of the API implementation.
+* `tests/`: Directory for test scripts.
 * `requirements.txt`: List of project dependencies.
+
+## UML
+
+The UML (Unified Modeling Language) diagram provides a visual representation of the key components and relationships in the REST API project, providing its structural overview.
+
+![UML Diagram](uml.png)
 
 ## Usage
 To use the API, run the Flask application and make requests to the specified endpoints. You can use tools like Postman for manual testing or write automated tests using the provided test fixtures.
@@ -149,10 +114,16 @@ You can run automated tests using pytest or manually test the API with Postman.
 
 ### Automated Tests
 
-To run automated tests, use the following command:
+You can use the pytest framework to run tests for the API. Install pytest if you haven't already:
 
 ```bash
-pytest
+pip install pytest
+```
+
+To run the tests, execute the following command in the project directory:
+
+```bash
+pytest tests/test_api.py
 ```
 
 ## Manual Testing
@@ -184,10 +155,19 @@ This table will store information about individuals ("persons").
 * `email` will store the email address of the person as a string.
 
 ## Deployment
-For deployment instructions, refer to the project's documentation in the docs/ directory.
+To deploy the API on a server, you can follow these general steps:
+
+Set up a server environment (e.g., AWS, Heroku, or your preferred hosting service).
+Configure environment variables for database connection details.
+Deploy the code to the server.
+Install required packages on the server using pip.
+Start the API on the server.
+
+## API Documentation
+For detailed information on API endpoints, request/response formats, and usage examples, refer to the API Documentation.
 
 ## License
 This project is licensed under the MIT License.
 
 ## Acknowledgments
-I thank HNG for graciously granting this task.
+I thank HNG for graciously providing this task.
