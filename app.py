@@ -1,10 +1,18 @@
+import os
 from flask import Flask, request, jsonify
 from sqlalchemy import create_engine, MetaData, Table, select, insert, update, delete
 
 app = Flask(__name__)
 
+# Get database credentials from environment variables
+db_username = os.environ.get('DATABASE_USERNAME')
+db_password = os.environ.get('DATABASE_PASSWORD')
+
+# Create the DTABASE_URL
+db_url = f'mysql+mysqlconnector://{db_username}:{db_password}@localhost/persons'
+
 # Create a SQLAlchemy engine (you can change the database URL as needed)
-engine = create_engine("mysql+mysqlconnector://root:password@localhost/persons")
+engine = create_engine(db_url)
 
 # Create a SQLAlchemy MetaData object
 metadata = MetaData()
