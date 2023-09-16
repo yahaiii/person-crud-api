@@ -6,7 +6,7 @@ This document provides documentation for the REST API for managing a "person" re
 
 ## Base URL
 
-The base URL for this API is `http://localhost:5000/api`. Replace `localhost` and `5000` with the appropriate values if your API is hosted elsewhere.
+The base URL for this API is `[[http://localhost:5000/api](http://yahai.pythonanywhere.com/api)](http://yahai.pythonanywhere.com/api)`.
 
 ## Endpoints
 
@@ -16,7 +16,7 @@ The base URL for this API is `http://localhost:5000/api`. Replace `localhost` an
 - **Description:** Add a new person to the database.
 - **Request Format:**
   - Method: POST
-  - URL: `http://localhost:5000/api`
+  - URL: `http://yahai.pythonanywhere.com/api`
   - Request Body: JSON object containing person details:
     ```json
     {
@@ -40,7 +40,7 @@ The base URL for this API is `http://localhost:5000/api`. Replace `localhost` an
 - **Description:** Fetch details of a person by person_id.
 - **Request Format:**
   - Method: GET
-  - URL: `http://localhost:5000/api/<int:person_id>`
+  - URL: `http://yahai.pythonanywhere.com/<int:person_id>`
 - **Response Format:**
   - Status Code: 200 (OK) if person is found, 404 (Not Found) otherwise.
   - Response Body (if found):
@@ -65,7 +65,7 @@ The base URL for this API is `http://localhost:5000/api`. Replace `localhost` an
 - **Description:** Modify details of an existing person by person_id.
 - **Request Format:**
   - Method: PUT
-  - URL: `http://localhost:5000/api/<int:person_id>`
+  - URL: `http://yahai.pythonanywhere.com/api/<int:person_id>`
   - Request Body: JSON object containing updated person details (age and email):
     ```json
     {
@@ -94,7 +94,7 @@ The base URL for this API is `http://localhost:5000/api`. Replace `localhost` an
 - **Description:** Remove a person by person_id.
 - **Request Format:**
   - Method: DELETE
-  - URL: `http://localhost:5000/api/<int:person_id>`
+  - URL: `http://yahai.pythonanywhere.com/api/<int:person_id>`
 - **Response Format:**
   - Status Code: 200 (OK) if person is found and deleted, 404 (Not Found) otherwise.
   - Response Body (if found and deleted):
