@@ -59,7 +59,7 @@ def update_person(person_id):
     with engine.connect() as connection:
         query = update(persons_table).where(persons_table.c.person_id == person_id).values(**data)
         result = connection.execute(query)
-        connection.commit()  # Commit the changes to the database
+        # connection.commit()  # Commit the changes to the database
 
     if result.rowcount == 0:
         return jsonify({"error": "Person not found"}), 404
@@ -71,7 +71,7 @@ def delete_person(person_id):
     with engine.connect() as connection:
         query = delete(persons_table).where(persons_table.c.person_id == person_id)
         result = connection.execute(query)
-        connection.commit()  # Commit the changes to the database
+        # connection.commit()  # Commit the changes to the database
 
     if result.rowcount == 0:
         return jsonify({"error": "Person not found"}), 404
@@ -105,7 +105,7 @@ def process_person(dynamic_param):
                 with engine.connect() as connection:
                     query = update(persons_table).where(persons_table.c.person_id == person_id).values(**data)
                     result = connection.execute(query)
-                    connection.commit()
+                    # connection.commit()
 
                 if result.rowcount == 0:
                     return jsonify({"error": "Person not found by person_id"}), 404
@@ -117,7 +117,7 @@ def process_person(dynamic_param):
                 with engine.connect() as connection:
                     query = delete(persons_table).where(persons_table.c.person_id == person_id)
                     result = connection.execute(query)
-                    connection.commit()
+                    # connection.commit()
 
                 if result.rowcount == 0:
                     return jsonify({"error": "Person not found by person_id"}), 404
@@ -147,7 +147,7 @@ def process_person(dynamic_param):
                 with engine.connect() as connection:
                     query = update(persons_table).where(persons_table.c.name == dynamic_param).values(**data)
                     result = connection.execute(query)
-                    connection.commit()
+                    # connection.commit()
 
                 if result.rowcount == 0:
                     return jsonify({"error": "Person not found by person_name"}), 404
@@ -159,7 +159,7 @@ def process_person(dynamic_param):
                 with engine.connect() as connection:
                     query = delete(persons_table).where(persons_table.c.name == dynamic_param)
                     result = connection.execute(query)
-                    connection.commit()
+                    # connection.commit()
 
                 if result.rowcount == 0:
                     return jsonify({"error": "Person not found by person_name"}), 404
