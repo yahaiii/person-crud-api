@@ -6,7 +6,7 @@ This document provides documentation for the REST API for managing a "person" re
 
 ## Base URL
 
-The base URL for this API is `[[http://localhost:5000/api](http://yahai.pythonanywhere.com/api)](http://yahai.pythonanywhere.com/api)`.
+The base URL for this API is `http://yahai.pythonanywhere.com/api`.
 
 ## Endpoints
 
